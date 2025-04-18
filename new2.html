@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="new2.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    
+
+    <div class="container">
+        <div class="logout-section">
+            <button id="logout-btn">Logout</button>
+        </div>
+        <h1>Expense Tracker</h1>
+        <form id="expense-form">
+            <input type="text" id="expense-name" placeholder="Expense Name" required>
+            <input type="number" id="expense-amount" placeholder="Amount" required>
+            <select id="expense-category">
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Utilities">Utilities</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="date" id="expense-date" required>
+            <button type="submit">Add Expense</button>
+        </form>
+
+        <div class="filter">
+            <label for="filter-category">Filter by Category:</label>
+            <select id="filter-category">
+                <option value="All">All</option>
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Utilities">Utilities</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="expense-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="expense-list"></tbody>
+            </table>
+        </div>
+
+        <div class="total-amount">Total Amount: ₹<span id="total-amount">0.00</span></div>
+
+        <div class="sorting-controls">
+            <button id="sort-date-asc">Sort Date ↑</button>
+            <button id="sort-date-desc">Sort Date ↓</button>
+            <button id="sort-amount-asc">Sort Amount ↑</button>
+            <button id="sort-amount-desc">Sort Amount ↓</button>
+        </div>
+
+        <div class="chart-controls">
+            <button id="show-daily-chart">Show Daily Chart</button>
+            <button id="show-monthly-chart">Show Monthly Chart</button>
+            <button id="show-weekly-chart">Show Weekly Chart</button>
+        </div>
+
+        <h2 id="daily-chart-heading">Daily Expenses</h2>
+        <canvas id="expenseChart"></canvas>
+
+        <h2 id="monthly-chart-heading" style="display:none;">Monthly Expenses</h2>
+        <canvas id="monthlyExpenseChart" style="display:none;"></canvas>
+
+        <h2 id="weekly-chart-heading" style="display:none;">Weekly Expenses</h2>
+        <canvas id="weeklyExpenseChart" style="display:none;"></canvas>
+
+
+    </div>
+
+    <script src="new2.js"></script>
+</body>
+
+</html>
